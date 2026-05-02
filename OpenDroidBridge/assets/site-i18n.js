@@ -211,18 +211,44 @@ function normalizeLanguage(value) {
   return normalized.startsWith("ja") ? "ja" : normalized.startsWith("en") ? "en" : "";
 }
 
+function readSavedLanguage() {
+  try {
+    return normalizeLanguage(window.localStorage.getItem("odb-site-language"));
+  } catch {
+    return "";
+  }
+}
+
+function saveLanguage(language) {
+  try {
+    window.localStorage.setItem("odb-site-language", language);
+  } catch {
+    // Ignore storage errors in private browsing or locked-down webviews.
+  }
+}
+
+function browserLanguage() {
+  const candidates = Array.isArray(window.navigator.languages) && window.navigator.languages.length > 0
+    ? window.navigator.languages
+    : [window.navigator.language];
+  return candidates.map(normalizeLanguage).find(Boolean) || "";
+}
+
 function detectLanguage() {
   const params = new URLSearchParams(window.location.search);
   const queryLanguage = normalizeLanguage(params.get("lang"));
   if (queryLanguage) {
-    window.localStorage.setItem("odb-site-language", queryLanguage);
+    saveLanguage(queryLanguage);
     return queryLanguage;
   }
 
-  const savedLanguage = normalizeLanguage(window.localStorage.getItem("odb-site-language"));
+  const bootLanguage = normalizeLanguage(window.__odbInitialLanguage);
+  if (bootLanguage) return bootLanguage;
+
+  const savedLanguage = readSavedLanguage();
   if (savedLanguage) return savedLanguage;
 
-  return normalizeLanguage(window.navigator.language) || "en";
+  return browserLanguage() || "en";
 }
 
 function applyLanguage(language) {
@@ -275,7 +301,7 @@ function bindLanguageControls() {
     button.addEventListener("click", () => {
       const lang = normalizeLanguage(button.dataset.langButton);
       if (!lang) return;
-      window.localStorage.setItem("odb-site-language", lang);
+      saveLanguage(lang);
       applyLanguage(lang);
     });
   });

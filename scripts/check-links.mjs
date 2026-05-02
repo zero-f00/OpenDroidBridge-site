@@ -1,5 +1,5 @@
 import { readFileSync, statSync } from "node:fs";
-import { join } from "node:path";
+import { dirname, join, normalize } from "node:path";
 
 const root = new URL("../", import.meta.url).pathname;
 const pages = [
@@ -8,6 +8,8 @@ const pages = [
   "OpenDroidBridge/support/index.html",
   "OpenDroidBridge/privacy/index.html"
 ];
+
+const localizedPages = pages.filter((page) => page.startsWith("OpenDroidBridge/"));
 
 const requiredFiles = [
   "OpenDroidBridge/assets/app-icon.png",
@@ -36,6 +38,28 @@ for (const page of pages) {
 
 for (const file of requiredFiles) {
   statSync(join(root, file));
+}
+
+const i18nSource = readFileSync(join(root, "OpenDroidBridge/assets/site-i18n.js"), "utf8");
+for (const page of localizedPages) {
+  const html = readFileSync(join(root, page), "utf8");
+  const keys = [
+    ...html.matchAll(/data-i18n(?:-[a-z-]+)?="([^"]+)"/g)
+  ].map((match) => match[1]);
+
+  for (const key of keys) {
+    if (!i18nSource.includes(`"${key}"`)) {
+      throw new Error(`${page} references missing i18n key ${key}`);
+    }
+  }
+
+  const imageSources = [
+    ...html.matchAll(/data-(?:ja|en)-src="([^"]+)"/g)
+  ].map((match) => normalize(join(dirname(page), match[1])));
+
+  for (const source of imageSources) {
+    statSync(join(root, source));
+  }
 }
 
 console.log("Static site checks passed.");

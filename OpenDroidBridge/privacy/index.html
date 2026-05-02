@@ -7,6 +7,42 @@
     <meta name="description" content="OpenDroidBridgeのプライバシーポリシーです。アプリが扱う端末情報、ファイル、任意のAI連携、問い合わせ情報について説明します。" data-i18n-content="privacy.description">
     <link rel="icon" href="../assets/app-icon.png">
     <link rel="apple-touch-icon" href="../assets/app-icon.png">
+    <script>
+      (() => {
+        const normalize = (value) => {
+          const language = String(value || "").toLowerCase();
+          if (language.startsWith("ja")) return "ja";
+          if (language.startsWith("en")) return "en";
+          return "";
+        };
+        const readSaved = () => {
+          try {
+            return normalize(window.localStorage.getItem("odb-site-language"));
+          } catch {
+            return "";
+          }
+        };
+        const save = (language) => {
+          try {
+            window.localStorage.setItem("odb-site-language", language);
+          } catch {
+            // Storage can be unavailable in some browser modes.
+          }
+        };
+        const browser = () => {
+          const candidates = Array.isArray(window.navigator.languages) && window.navigator.languages.length > 0
+            ? window.navigator.languages
+            : [window.navigator.language];
+          return candidates.map(normalize).find(Boolean) || "";
+        };
+        const query = normalize(new URLSearchParams(window.location.search).get("lang"));
+        const language = query || readSaved() || browser() || "en";
+        if (query) save(query);
+        document.documentElement.lang = language;
+        document.documentElement.dataset.lang = language;
+        window.__odbInitialLanguage = language;
+      })();
+    </script>
     <link rel="stylesheet" href="../assets/site.css">
   </head>
   <body>
