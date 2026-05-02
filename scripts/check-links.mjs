@@ -39,6 +39,25 @@ for (const page of pages) {
   if (html.includes("support@example.com")) {
     throw new Error(`${page} still contains placeholder support@example.com`);
   }
+  if (html.includes("github.com/zero-f00/OpenDroidBridge-site/issues")) {
+    throw new Error(`${page} still links to public GitHub Issues for support`);
+  }
+}
+
+const supportPage = readFileSync(join(root, "OpenDroidBridge/support/index.html"), "utf8");
+if (!supportPage.includes("mailto:info@tkgshoyu.jp")) {
+  throw new Error("support page must link to info@tkgshoyu.jp");
+}
+
+const legalI18n = readFileSync(join(root, "OpenDroidBridge/assets/site-i18n.js"), "utf8");
+for (const required of [
+  "info@tkgshoyu.jp",
+  "〒150-0043 東京都渋谷区道玄坂1丁目10番8号 渋谷道玄坂東急ビル2F-C",
+  "Shibuya Dogenzaka Tokyu Building 2F-C"
+]) {
+  if (!legalI18n.includes(required)) {
+    throw new Error(`missing required legal/support value: ${required}`);
+  }
 }
 
 for (const file of requiredFiles) {

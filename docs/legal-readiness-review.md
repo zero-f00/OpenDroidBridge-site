@@ -6,8 +6,9 @@ Checked on 2026-05-03. This is an implementation checklist and risk review for t
 
 - OpenDroidBridge is planned as a paid one-time macOS app distributed through the Mac App Store.
 - The app does not use subscriptions, in-app purchases, external payment links, or a developer-operated analytics server in the described release model.
-- The site owner and seller name currently shown as `Yuto Masamura` is based on the existing website copyright. Confirm this is the exact App Store Connect seller/legal name before release.
-- A public GitHub Issues intake is available at `https://github.com/zero-f00/OpenDroidBridge-site/issues/new`, and `gh repo view` confirmed Issues are enabled.
+- The representative is `Yuto Masamura`, provided by the site owner on 2026-05-03.
+- The support email is `info@tkgshoyu.jp`, provided by the site owner on 2026-05-03.
+- The address is `〒150-0043 東京都渋谷区道玄坂1丁目10番8号 渋谷道玄坂東急ビル2F-C`, provided by the site owner on 2026-05-03.
 
 ## What is required or strongly recommended
 
@@ -46,7 +47,7 @@ Needed or at least strongly recommended for Japan-facing paid distribution. The 
 Implementation:
 
 - `/OpenDroidBridge/legal/`
-- Covers seller, operations manager, address/phone disclosure on request, contact route, App Store price, extra fees, payment timing/method, delivery timing, returns/refunds, operating environment, and special sales conditions.
+- Covers seller, representative, address, phone disclosure on request, contact route, App Store price, extra fees, payment timing/method, delivery timing, returns/refunds, operating environment, and special sales conditions.
 - Uses "App Store product page price" rather than inventing a price.
 - Uses Apple refund process for App Store purchases rather than inventing a developer-run refund flow.
 
@@ -61,9 +62,9 @@ Sources:
 
 - Replace `https://example.com` in Open Graph metadata and `sitemap.xml` with the final Vercel or custom domain.
 - Confirm the legal seller name exactly matches App Store Connect and the paid apps agreement account.
-- Establish a private support email or form before submission. Public GitHub Issues is acceptable for general troubleshooting, but privacy requests, refunds, identity details, and address/phone disclosure requests should not start or finish in a public issue.
-- If address and phone number are not displayed directly, confirm the "disclose without delay on request" process is operational before launch.
+- Keep `info@tkgshoyu.jp` able to receive privacy requests, refund-related support, and Specified Commercial Transactions Act phone-number disclosure requests before launch.
+- If the phone number is not displayed directly, confirm the "disclose without delay on request" process is operational before launch.
 
 ## Current conclusion
 
-The site now has the right page structure and non-placeholder content for App Store readiness: marketing, support, privacy policy, terms of use, and Japan SCTA notice. The remaining items are factual business details and deployment-domain replacements, not missing page implementation.
+The site now has the right page structure and non-placeholder content for App Store readiness: marketing, support, privacy policy, terms of use, and Japan SCTA notice. The remaining items are phone-number disclosure operations, App Store Connect seller-name confirmation, and deployment-domain replacements, not missing page implementation.

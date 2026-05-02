@@ -28,7 +28,7 @@ http://localhost:3000/OpenDroidBridge/
 
 ## Before deploying
 
-- Confirm the seller name, address, phone disclosure process, and support intake match the App Store Connect seller information before release.
-- The current public support link uses GitHub Issues for the provided repository. Add a private email or form before release for privacy requests, refund details, and Specified Commercial Transactions Act disclosure requests.
+- Confirm the seller name, address, representative, phone disclosure process, and support intake match the App Store Connect seller information before release.
+- The current support link uses `info@tkgshoyu.jp`. Keep that mailbox able to handle privacy requests, refund-related support, and Specified Commercial Transactions Act disclosure requests.
 - Replace `https://example.com` metadata values with the final domain.
 - Upload this directory as a separate Vercel project.
