@@ -1,25 +1,29 @@
 <!doctype html>
-<html lang="ja">
+<html lang="ja" data-lang="ja">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>サポート - OpenDroidBridge</title>
-    <meta name="description" content="OpenDroidBridgeのサポートページです。Android端末やMeta QuestのUSB接続、ADB、USBデバッグ、ファイル転送に関するよくある質問を掲載しています。">
+    <title data-i18n="support.title">サポート - OpenDroidBridge</title>
+    <meta name="description" content="OpenDroidBridgeのサポートページです。Android端末やMeta QuestのUSB接続、ADB、USBデバッグ、ファイル転送に関するよくある質問を掲載しています。" data-i18n-content="support.description">
     <link rel="icon" href="../assets/app-icon.png">
     <link rel="apple-touch-icon" href="../assets/app-icon.png">
     <link rel="stylesheet" href="../assets/site.css">
   </head>
   <body>
     <header class="site-header">
-      <nav class="nav" aria-label="メインナビゲーション">
+      <nav class="nav" aria-label="メインナビゲーション" data-i18n-aria-label="common.nav.aria">
         <a class="brand" href="../">
           <img src="../assets/app-icon.png" alt="">
           <span>OpenDroidBridge</span>
         </a>
         <div class="nav-links">
-          <a href="../">概要</a>
-          <a href="./">サポート</a>
-          <a href="../privacy/">プライバシー</a>
+          <a href="../" data-i18n="common.nav.overview">概要</a>
+          <a href="./" data-i18n="common.nav.support">サポート</a>
+          <a href="../privacy/" data-i18n="common.nav.privacy">プライバシー</a>
+          <div class="lang-switch" role="group" aria-label="表示言語" data-i18n-aria-label="common.lang.aria">
+            <button type="button" data-lang-button="ja" aria-pressed="true">日本語</button>
+            <button type="button" data-lang-button="en" aria-pressed="false">English</button>
+          </div>
         </div>
       </nav>
     </header>
@@ -27,12 +31,12 @@
     <main>
       <section class="page-hero">
         <div class="section-inner">
-          <p class="eyebrow">Support</p>
-          <h1>OpenDroidBridge サポート</h1>
-          <p class="lead">接続できない、端末が表示されない、ファイルを保存できないときは、このページの手順を順番に確認してください。</p>
+          <p class="eyebrow" data-i18n="support.hero.eyebrow">Support</p>
+          <h1 data-i18n="support.hero.title">OpenDroidBridge サポート</h1>
+          <p class="lead" data-i18n="support.hero.lead">接続できない、端末が表示されない、ファイルを保存できないときは、このページの手順を順番に確認してください。</p>
           <div class="support-actions">
-            <a class="button primary" href="mailto:support@example.com?subject=OpenDroidBridge%20Support">メールで問い合わせる</a>
-            <a class="button" href="../privacy/">プライバシーポリシー</a>
+            <a class="button primary" href="mailto:support@example.com?subject=OpenDroidBridge%20Support" data-i18n="support.mail">メールで問い合わせる</a>
+            <a class="button" href="../privacy/" data-i18n="support.privacy">プライバシーポリシー</a>
           </div>
         </div>
       </section>
@@ -40,33 +44,33 @@
       <section class="section">
         <div class="section-inner content-columns">
           <aside class="side-note">
-            <strong>問い合わせ時にあると助かる情報</strong>
-            <p>MacのOSバージョン、端末名、接続状態、表示されたエラーメッセージ、再スキャン後の状態を添えてください。</p>
+            <strong data-i18n="support.note.title">問い合わせ時にあると助かる情報</strong>
+            <p data-i18n="support.note.body">MacのOSバージョン、端末名、接続状態、表示されたエラーメッセージ、再スキャン後の状態を添えてください。</p>
           </aside>
           <div class="faq-list">
             <article class="faq-item">
-              <h2>最初に確認すること</h2>
-              <p>macOS 14以降、Android platform-toolsのadb、USBデータ転送対応ケーブル、端末側のUSBデバッグ許可が必要です。端末をロック解除し、表示されたUSBデバッグ許可ダイアログを承認してから、OpenDroidBridgeの再スキャンを押してください。</p>
+              <h2 data-i18n="support.faq.start.title">最初に確認すること</h2>
+              <p data-i18n="support.faq.start.body">macOS 14以降、Android platform-toolsのadb、USBデータ転送対応ケーブル、端末側のUSBデバッグ許可が必要です。端末をロック解除し、表示されたUSBデバッグ許可ダイアログを承認してから、OpenDroidBridgeの再スキャンを押してください。</p>
             </article>
             <article class="faq-item">
-              <h2>Android端末が表示されない</h2>
-              <p>USBケーブルを抜き差しし、充電専用ケーブルではないことを確認してください。Androidの開発者向けオプションでUSBデバッグを有効にし、接続時に表示される「このパソコンからのUSBデバッグを許可」を承認します。</p>
+              <h2 data-i18n="support.faq.android.title">Android端末が表示されない</h2>
+              <p data-i18n="support.faq.android.body">USBケーブルを抜き差しし、充電専用ケーブルではないことを確認してください。Androidの開発者向けオプションでUSBデバッグを有効にし、接続時に表示される「このパソコンからのUSBデバッグを許可」を承認します。</p>
             </article>
             <article class="faq-item">
-              <h2>Meta Questが表示されない</h2>
-              <p>Meta Horizonアプリで開発者モードを有効化し、Questを装着した状態でUSBデバッグ許可ダイアログを確認してください。通常のメディアアクセスには、Quest側でUSBファイルアクセスの許可も必要です。</p>
+              <h2 data-i18n="support.faq.quest.title">Meta Questが表示されない</h2>
+              <p data-i18n="support.faq.quest.body">Meta Horizonアプリで開発者モードを有効化し、Questを装着した状態でUSBデバッグ許可ダイアログを確認してください。通常のメディアアクセスには、Quest側でUSBファイルアクセスの許可も必要です。</p>
             </article>
             <article class="faq-item">
-              <h2>unauthorized と表示される</h2>
-              <p>Mac側から端末は見えていますが、端末側でADB接続が許可されていません。端末の画面を確認し、USBデバッグ許可を承認してください。ダイアログが出ない場合は、USBデバッグを一度オフにしてから再度オンにします。</p>
+              <h2 data-i18n="support.faq.unauthorized.title">unauthorized と表示される</h2>
+              <p data-i18n="support.faq.unauthorized.body">Mac側から端末は見えていますが、端末側でADB接続が許可されていません。端末の画面を確認し、USBデバッグ許可を承認してください。ダイアログが出ない場合は、USBデバッグを一度オフにしてから再度オンにします。</p>
             </article>
             <article class="faq-item">
-              <h2>ファイルを開けない、保存できない</h2>
-              <p>Androidのアプリ内部データや一部のシステム領域は、端末側の権限によりアクセスできないことがあります。OpenDroidBridgeは権限を回避するアプリではありません。写真、動画、Download、Documentsなどの共有ストレージから操作してください。</p>
+              <h2 data-i18n="support.faq.files.title">ファイルを開けない、保存できない</h2>
+              <p data-i18n="support.faq.files.body">Androidのアプリ内部データや一部のシステム領域は、端末側の権限によりアクセスできないことがあります。OpenDroidBridgeは権限を回避するアプリではありません。写真、動画、Download、Documentsなどの共有ストレージから操作してください。</p>
             </article>
             <article class="faq-item">
-              <h2>削除したファイルを戻したい</h2>
-              <p>OpenDroidBridgeの削除は、通常は復元エリアへ移動します。サイドバーの「復元できる項目」から、削除した項目や置き換え前の項目を確認し、必要に応じて元の場所または選択した場所へ戻してください。</p>
+              <h2 data-i18n="support.faq.restore.title">削除したファイルを戻したい</h2>
+              <p data-i18n="support.faq.restore.body">OpenDroidBridgeの削除は、通常は復元エリアへ移動します。サイドバーの「復元できる項目」から、削除した項目や置き換え前の項目を確認し、必要に応じて元の場所または選択した場所へ戻してください。</p>
             </article>
           </div>
         </div>
@@ -75,9 +79,10 @@
 
     <footer class="footer">
       <div class="footer-inner">
-        <span>Copyright 2026 Yuto Masamura</span>
-        <span><a href="../">Marketing</a> / <a href="../privacy/">Privacy</a></span>
+        <span data-i18n="common.footer.copyright">Copyright 2026 Yuto Masamura</span>
+        <span><a href="../" data-i18n="common.footer.marketing">Marketing</a> / <a href="../privacy/" data-i18n="common.footer.privacy">Privacy</a></span>
       </div>
     </footer>
+    <script src="../assets/site-i18n.js" defer></script>
   </body>
 </html>
