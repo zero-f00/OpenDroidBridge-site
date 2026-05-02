@@ -1,0 +1,9 @@
+{
+  "name": "opendroidbridge-site",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Static Vercel-ready marketing, support, and privacy pages for OpenDroidBridge.",
+  "scripts": {
+    "check": "node scripts/check-links.mjs"
+  }
+}
