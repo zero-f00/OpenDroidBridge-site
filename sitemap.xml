@@ -9,4 +9,10 @@
   <url>
     <loc>https://example.com/OpenDroidBridge/privacy/</loc>
   </url>
+  <url>
+    <loc>https://example.com/OpenDroidBridge/terms/</loc>
+  </url>
+  <url>
+    <loc>https://example.com/OpenDroidBridge/legal/</loc>
+  </url>
 </urlset>

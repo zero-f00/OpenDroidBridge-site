@@ -6,7 +6,9 @@ const pages = [
   "index.html",
   "OpenDroidBridge/index.html",
   "OpenDroidBridge/support/index.html",
-  "OpenDroidBridge/privacy/index.html"
+  "OpenDroidBridge/privacy/index.html",
+  "OpenDroidBridge/terms/index.html",
+  "OpenDroidBridge/legal/index.html"
 ];
 
 const localizedPages = pages.filter((page) => page.startsWith("OpenDroidBridge/"));
@@ -33,6 +35,9 @@ for (const page of pages) {
   const html = readFileSync(join(root, page), "utf8");
   if (!/<title(\s|>)/.test(html)) {
     throw new Error(`${page} is missing a title`);
+  }
+  if (html.includes("support@example.com")) {
+    throw new Error(`${page} still contains placeholder support@example.com`);
   }
 }
 

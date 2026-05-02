@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ja" data-lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title data-i18n="legal.title">特定商取引法に基づく表記 - OpenDroidBridge</title>
+    <meta name="description" content="OpenDroidBridgeの特定商取引法に基づく表記です。有料買い切りのApp Store配布を前提に、販売価格、支払方法、提供時期、返品・返金、必要環境を記載します。" data-i18n-content="legal.description">
+    <link rel="icon" href="../assets/app-icon.png">
+    <link rel="apple-touch-icon" href="../assets/app-icon.png">
+    <script>
+      (() => {
+        const normalize = (value) => {
+          const language = String(value || "").toLowerCase();
+          if (language.startsWith("ja")) return "ja";
+          if (language.startsWith("en")) return "en";
+          return "";
+        };
+        const readSaved = () => {
+          try {
+            return normalize(window.localStorage.getItem("odb-site-language"));
+          } catch {
+            return "";
+          }
+        };
+        const save = (language) => {
+          try {
+            window.localStorage.setItem("odb-site-language", language);
+          } catch {
+            // Storage can be unavailable in some browser modes.
+          }
+        };
+        const browser = () => {
+          const candidates = Array.isArray(window.navigator.languages) && window.navigator.languages.length > 0
+            ? window.navigator.languages
+            : [window.navigator.language];
+          return candidates.map(normalize).find(Boolean) || "";
+        };
+        const query = normalize(new URLSearchParams(window.location.search).get("lang"));
+        const language = query || readSaved() || browser() || "en";
+        if (query) save(query);
+        document.documentElement.lang = language;
+        document.documentElement.dataset.lang = language;
+        window.__odbInitialLanguage = language;
+      })();
+    </script>
+    <link rel="stylesheet" href="../assets/site.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="メインナビゲーション" data-i18n-aria-label="common.nav.aria">
+        <a class="brand" href="../">
+          <img src="../assets/app-icon.png" alt="">
+          <span>OpenDroidBridge</span>
+        </a>
+        <div class="nav-links">
+          <a href="../" data-i18n="common.nav.overview">概要</a>
+          <a href="../support/" data-i18n="common.nav.support">サポート</a>
+          <a href="../privacy/" data-i18n="common.nav.privacy">プライバシー</a>
+          <div class="lang-switch" role="group" aria-label="表示言語" data-i18n-aria-label="common.lang.aria">
+            <button type="button" data-lang-button="ja" aria-pressed="true">日本語</button>
+            <button type="button" data-lang-button="en" aria-pressed="false">English</button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="section-inner">
+          <p class="eyebrow" data-i18n="legal.hero.eyebrow">Legal Notice</p>
+          <h1 data-i18n="legal.hero.title">特定商取引法に基づく表記</h1>
+          <p class="lead" data-i18n="legal.hero.lead">OpenDroidBridgeを日本向けに有料買い切りアプリとして提供する場合の取引条件を整理しています。App Store上の表示と矛盾する場合は、App Store上の表示およびAppleの手続きが優先されることがあります。</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-inner content-columns">
+          <aside class="side-note">
+            <strong data-i18n="legal.note.title">重要</strong>
+            <p data-i18n="legal.note.body">所在地、電話番号、正式な販売業者名は、リリース前にApp Store Connect上の販売主体と一致する内容へ確認してください。住所・電話番号は、法令に基づき請求があった場合に遅滞なく開示できる体制が必要です。</p>
+          </aside>
+          <div class="policy-list">
+            <article class="policy-block">
+              <h2 data-i18n="legal.seller.title">販売業者</h2>
+              <p data-i18n="legal.seller.body">Yuto Masamura</p>
+            </article>
+            <article class="policy-block">
+              <h2 data-i18n="legal.manager.title">運営責任者</h2>
+              <p data-i18n="legal.manager.body">Yuto Masamura</p>
+            </article>
+            <article class="policy-block">
+              <h2 data-i18n="legal.address.title">所在地・電話番号</h2>
+              <p data-i18n="legal.address.body">請求があった場合には、特定商取引法の表示事項として遅滞なく開示します。請求はサポートページの連絡先から「特商法表示事項の開示請求」として送信してください。公開Issueには住所、電話番号、本人確認資料、その他の個人情報を記載しないでください。</p>
+            </article>
+            <article class="policy-block">
+              <h2 data-i18n="legal.contact.title">連絡先</h2>
+              <p data-i18n="legal.contact.body">サポートページに記載の窓口からお問い合わせください。公開Issueでは扱えない個人情報、返金、法令上の開示請求については、非公開で連絡できる方法を案内します。</p>
+            </article>
+            <article class="policy-block">
+              <h2 data-i18n="legal.price.title">販売価格</h2>
+              <p data-i18n="legal.price.body">App Storeの商品ページに表示される価格です。価格は国または地域、税、App Storeの価格設定により異なります。</p>
+            </article>
+            <article class="policy-block">
+              <h2 data-i18n="legal.fees.title">販売価格以外の必要料金</h2>
+              <p data-i18n="legal.fees.body">インターネット接続料金、通信料金、USBケーブル、対応端末、Mac、必要に応じたAndroid platform-toolsの導入環境はユーザーの負担です。商品の性質上、送料は発生しません。</p>
+            </article>
+            <article class="policy-block">
+              <h2 data-i18n="legal.payment.title">支払方法・支払時期</h2>
+              <p data-i18n="legal.payment.body">App StoreおよびApple Accountで利用可能な支払方法により、購入時に決済されます。開発者はクレジットカード番号などの支払い情報を直接受け取りません。</p>
+            </article>
+            <article class="policy-block">
+              <h2 data-i18n="legal.delivery.title">提供時期</h2>
+              <p data-i18n="legal.delivery.body">App Storeでの購入手続き完了後、App Storeからダウンロード可能になります。端末、ネットワーク、App Storeの状態により利用開始まで時間がかかる場合があります。</p>
+            </article>
+            <article class="policy-block">
+              <h2 data-i18n="legal.cancel.title">返品・キャンセル・返金</h2>
+              <p data-i18n="legal.cancel.body">デジタル商品の性質上、購入完了後のユーザー都合による返品・キャンセルは原則として受け付けていません。App Storeで購入したアプリの返金申請は、Appleのreportaproblem.apple.com等の手続きに従ってください。不具合がある場合はサポートページから連絡してください。</p>
+            </article>
+            <article class="policy-block">
+              <h2 data-i18n="legal.environment.title">動作環境</h2>
+              <p data-i18n="legal.environment.body">macOS 14以降、Android platform-toolsに含まれるadb、USBデータ転送対応ケーブル、USBデバッグを許可したAndroid端末、または開発者モードを有効化したMeta Questが必要です。詳細はマーケティングページとサポートページに記載しています。</p>
+            </article>
+            <article class="policy-block">
+              <h2 data-i18n="legal.special.title">特別な販売条件</h2>
+              <p data-i18n="legal.special.body">本サイトで想定しているリリース形態は、有料買い切りのMac App Store配布です。サブスクリプション、アプリ内課金、定期購入契約、物理商品の配送はありません。将来これらを追加する場合は、事前に表示を更新します。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <span data-i18n="common.footer.copyright">Copyright 2026 Yuto Masamura</span>
+        <span><a href="../" data-i18n="common.footer.marketing">Marketing</a> / <a href="../support/" data-i18n="common.footer.support">Support</a> / <a href="../privacy/" data-i18n="common.footer.privacy">Privacy</a> / <a href="../terms/" data-i18n="common.footer.terms">Terms</a></span>
+      </div>
+    </footer>
+    <script src="../assets/site-i18n.js" defer></script>
+  </body>
+</html>
