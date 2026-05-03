@@ -67,6 +67,18 @@ const landingSources = [
   "OpenDroidBridge/index.html",
   "OpenDroidBridge/assets/site-i18n.js"
 ];
+const requiredLandingPhrases = [
+  "Androidスマホ/タブレット",
+  "Android phones & tablets",
+  "お気に入り",
+  "favorites",
+  "復元エリア",
+  "Recovery area",
+  "Quest Display",
+  "Codex CLI",
+  "opendroidctl形式",
+  "opendroidctl-style"
+];
 const forbiddenLandingPhrases = [
   "App Store向け",
   "App Store review",
@@ -74,7 +86,8 @@ const forbiddenLandingPhrases = [
   "sandboxed environment",
   "現在のアプリ",
   "This site describes",
-  "別機能です"
+  "別機能です",
+  "Vercel-ready"
 ];
 for (const file of landingSources) {
   const content = readFileSync(join(root, file), "utf8");
@@ -82,6 +95,13 @@ for (const file of landingSources) {
     if (content.includes(phrase)) {
       throw new Error(`${file} contains internal landing-page phrase: ${phrase}`);
     }
+  }
+}
+
+const landingText = landingSources.map((file) => readFileSync(join(root, file), "utf8")).join("\n");
+for (const phrase of requiredLandingPhrases) {
+  if (!landingText.includes(phrase)) {
+    throw new Error(`landing page is missing verified app feature phrase: ${phrase}`);
   }
 }
 

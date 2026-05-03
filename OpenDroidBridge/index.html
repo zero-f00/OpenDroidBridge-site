@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title data-i18n="home.title">OpenDroidBridge - MacからAndroidとMeta Questへ安全にファイル転送</title>
-    <meta name="description" content="OpenDroidBridgeは、MacからAndroid端末やMeta QuestへUSB経由で安全にファイル転送するmacOSアプリです。復元できる削除、同名ファイル保護、スクリーンショット保存に対応します。" data-i18n-content="home.description">
+    <meta name="description" content="OpenDroidBridgeは、MacからAndroidスマホ/タブレットやMeta QuestへUSB経由で安全にファイル転送するmacOSアプリです。復元できる削除、同名ファイル保護、スクリーンショット保存に対応します。" data-i18n-content="home.description">
     <meta property="og:title" content="OpenDroidBridge">
     <meta property="og:description" content="MacからAndroidとMeta Questへ、安全にファイル転送。">
     <meta property="og:image" content="https://zero-f00.github.io/OpenDroidBridge-site/OpenDroidBridge/assets/og-image.png">
@@ -76,16 +76,17 @@
             <img class="app-mark" src="./assets/app-icon.png" alt="">
             <p class="eyebrow" data-i18n="home.hero.eyebrow">macOS file transfer for Android-based devices</p>
             <h1>OpenDroidBridge</h1>
-            <p class="lead" data-i18n="home.hero.lead">MacからAndroid端末やMeta Questへ、必要なファイルを安全に移動。USB接続、復元できる削除、同名ファイル保護、スクリーンショット保存まで一つにまとめます。</p>
+            <p class="lead" data-i18n="home.hero.lead">MacからAndroidスマホ/タブレットやMeta Questへ、必要なファイルを安全に移動。USB接続、復元できる削除、同名ファイル保護、スクリーンショット保存まで一つにまとめます。</p>
             <div class="hero-actions">
               <a class="button primary" href="#requirements" data-i18n="home.hero.primary">使い始める</a>
               <a class="button" href="./support/" data-i18n="home.hero.secondary">接続手順を見る</a>
             </div>
             <div class="hero-facts" aria-label="主な対応" data-i18n-aria-label="home.hero.facts.aria">
-              <span>Android phones</span>
-              <span>Meta Quest</span>
-              <span>ADB over USB</span>
-              <span>macOS 14+</span>
+              <span data-i18n="home.hero.fact.android">Androidスマホ/タブレット</span>
+              <span data-i18n="home.hero.fact.quest">Meta Quest</span>
+              <span data-i18n="home.hero.fact.adb">ADB over USB</span>
+              <span data-i18n="home.hero.fact.safety">復元エリア</span>
+              <span data-i18n="home.hero.fact.mac">macOS 14+</span>
             </div>
           </div>
         </div>
@@ -96,20 +97,24 @@
           <div class="section-heading">
             <p class="eyebrow" data-i18n="home.core.eyebrow">Core workflow</p>
             <h2 data-i18n="home.core.title">ファイル転送で怖いところを、最初から見える形に。</h2>
-            <p class="lead" data-i18n="home.core.lead">端末の状態、現在の場所、空き容量、操作リスクを確認しながら、Macへ保存・端末へ追加・新規フォルダ作成を進められます。</p>
+            <p class="lead" data-i18n="home.core.lead">端末の状態、現在の場所、空き容量、検索結果を確認しながら、Macへ保存・端末へ追加・新規フォルダ作成を進められます。</p>
           </div>
-          <div class="grid three">
+          <div class="grid two">
             <article class="card">
               <div class="metric"><span class="dot blue"></span><strong data-i18n="home.card.find.title">見つける</strong></div>
-              <p data-i18n="home.card.find.body">DCIM、Pictures、Movies、Download、Quest録画など、よく使う場所へすばやく移動できます。</p>
+              <p data-i18n="home.card.find.body">DCIM、Pictures、Movies、Download、Documents、アプリストレージ、Quest録画などへすばやく移動できます。</p>
             </article>
             <article class="card">
               <div class="metric"><span class="dot"></span><strong data-i18n="home.card.transfer.title">転送する</strong></div>
-              <p data-i18n="home.card.transfer.body">選択したファイルやフォルダをMacへ保存。Macから端末側フォルダへドラッグして追加できます。</p>
+              <p data-i18n="home.card.transfer.body">選択したファイルやフォルダをMacへ保存。Mac側のファイルやフォルダは、選択またはドラッグで端末へ追加できます。</p>
             </article>
             <article class="card">
               <div class="metric"><span class="dot amber"></span><strong data-i18n="home.card.recover.title">戻せる</strong></div>
               <p data-i18n="home.card.recover.body">削除や上書き前の項目を復元エリアへ残し、誤操作に気づいたあとでも確認し直せます。</p>
+            </article>
+            <article class="card">
+              <div class="metric"><span class="dot blue"></span><strong data-i18n="home.card.organize.title">絞り込む</strong></div>
+              <p data-i18n="home.card.organize.body">現在フォルダ内を検索し、よく使うファイルやフォルダはお気に入りとしてサイドバーから開けます。</p>
             </article>
           </div>
         </div>
@@ -124,7 +129,7 @@
             <p class="eyebrow" data-i18n="home.quest.eyebrow">Real device preview</p>
             <h2 data-i18n="home.quest.title">Questの録画やスクリーンショットも、Mac側から整理。</h2>
             <ul class="feature-list">
-              <li data-i18n="home.quest.item1">接続中のAndroid端末とMeta Questを並べて表示</li>
+              <li data-i18n="home.quest.item1">接続中のAndroidスマホ/タブレットとMeta Questを並べて表示</li>
               <li data-i18n="home.quest.item2">Quest向けのOculusフォルダ、録画フォルダへショートカット</li>
               <li data-i18n="home.quest.item3">端末ストレージの空き容量と現在のパスを常に表示</li>
               <li data-i18n="home.quest.item4">USBデバッグ未許可やオフライン状態も診断しやすい表示</li>
@@ -141,7 +146,7 @@
             <p class="lead" data-i18n="home.safety.lead">同名ファイルを送るときは、置き換える・両方残す・スキップを選択。置き換え前の項目や削除した項目は、復元できる場所から確認できます。</p>
             <div class="callout">
               <strong data-i18n="home.safety.callout.title">大切なファイルを守るための安全設計です。</strong>
-              <p data-i18n="home.safety.callout.body">OpenDroidBridgeは、端末内ファイル操作をユーザーの明示的な操作として扱い、復元できる処理を既定にしています。</p>
+              <p data-i18n="home.safety.callout.body">OpenDroidBridgeは、端末内ファイル操作をユーザーの明示的な操作として扱い、削除や置き換えでは復元エリアを使う流れを既定にしています。</p>
             </div>
           </div>
           <div class="screenshot-frame">
@@ -158,8 +163,8 @@
           <div>
             <p class="eyebrow" data-i18n="home.display.eyebrow">Quest diagnostics</p>
             <h2 data-i18n="home.display.title">Quest接続の確認とスナップショット取得にも対応。</h2>
-            <p class="lead" data-i18n="home.display.lead">Quest Display画面では、ADB接続、Quest画面スナップショット、実機情報、ADB forwardの準備状態を確認できます。</p>
-            <p class="side-note" data-i18n="home.display.note">Quest側の録画やスクリーンショット整理に加えて、接続状態を確認したいときにも使えます。</p>
+            <p class="lead" data-i18n="home.display.lead">Quest Display画面では、ADB接続、Quest画面スナップショット、実機情報、ADB forwardの設定・テスト状態を確認できます。</p>
+            <p class="side-note" data-i18n="home.display.note">Quest側の録画やスクリーンショット整理の前に、接続が正しく通っているかを確認したいときにも使えます。</p>
           </div>
         </div>
       </section>
@@ -167,9 +172,9 @@
       <section class="section">
         <div class="section-inner">
           <div class="section-heading">
-            <p class="eyebrow" data-i18n="home.ai.eyebrow">Optional AI CLI assistant</p>
+            <p class="eyebrow" data-i18n="home.ai.eyebrow">Optional AI planning</p>
             <h2 data-i18n="home.ai.title">AIに聞ける。でも、操作はあなたの確認で。</h2>
-            <p class="lead" data-i18n="home.ai.lead">Codex CLI、Claude Code、Ollama、LM Studioなど、手元のAI CLIやローカルLLMに現在の端末状態を渡して、ファイル整理や復元の手順を相談できます。</p>
+            <p class="lead" data-i18n="home.ai.lead">Codex CLI、Claude Code、Ollama、LM Studioなど、ユーザーが設定したAIツールに現在の端末状態を渡して、ファイル整理や復元の手順を相談できます。</p>
           </div>
           <div class="grid three">
             <article class="card">
@@ -177,8 +182,8 @@
               <p data-i18n="home.ai.card.context.body">選択中の端末種別、接続状態、現在フォルダの件数、操作リスク、ユーザーが明示的に追加したMac側参照だけを相談材料にします。</p>
             </article>
             <article class="card">
-              <h3 data-i18n="home.ai.card.command.title">CLI案をもらう</h3>
-              <p data-i18n="home.ai.card.command.body">AIはOpenDroidBridgeのUI操作やopendroidctlコマンドを提案します。raw adbより安全な操作手順を優先するプロンプトで実行されます。</p>
+              <h3 data-i18n="home.ai.card.command.title">手順案をもらう</h3>
+              <p data-i18n="home.ai.card.command.body">AIはOpenDroidBridgeのUI操作や、利用できる場合はopendroidctl形式のコマンド案を返します。raw adbより安全な手順を優先する前提です。</p>
             </article>
             <article class="card">
               <h3 data-i18n="home.ai.card.safe.title">勝手に実行しない</h3>
@@ -201,7 +206,7 @@
             </article>
             <article class="card">
               <h3 data-i18n="home.requirements.device.title">Android / Meta Quest</h3>
-              <p data-i18n="home.requirements.device.body">開発者向けオプションとUSBデバッグを有効化したAndroid端末、または開発者モードを有効化したMeta Quest。</p>
+              <p data-i18n="home.requirements.device.body">開発者向けオプションとUSBデバッグを有効化したAndroidスマホ/タブレット、または開発者モードを有効化したMeta Quest。</p>
             </article>
             <article class="card">
               <h3 data-i18n="home.requirements.adb.title">ADB</h3>
