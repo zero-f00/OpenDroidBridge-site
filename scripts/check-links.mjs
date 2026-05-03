@@ -63,6 +63,28 @@ for (const required of [
   }
 }
 
+const landingSources = [
+  "OpenDroidBridge/index.html",
+  "OpenDroidBridge/assets/site-i18n.js"
+];
+const forbiddenLandingPhrases = [
+  "App Store向け",
+  "App Store review",
+  "サンドボックス環境",
+  "sandboxed environment",
+  "現在のアプリ",
+  "This site describes",
+  "別機能です"
+];
+for (const file of landingSources) {
+  const content = readFileSync(join(root, file), "utf8");
+  for (const phrase of forbiddenLandingPhrases) {
+    if (content.includes(phrase)) {
+      throw new Error(`${file} contains internal landing-page phrase: ${phrase}`);
+    }
+  }
+}
+
 const rootPage = readFileSync(join(root, "index.html"), "utf8");
 if (!rootPage.includes("./OpenDroidBridge/")) {
   throw new Error("root redirect must be relative for GitHub project pages");
