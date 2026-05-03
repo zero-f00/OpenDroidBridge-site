@@ -14,6 +14,7 @@ const pages = [
 const localizedPages = pages.filter((page) => page.startsWith("OpenDroidBridge/"));
 
 const requiredFiles = [
+  ".github/workflows/pages.yml",
   "OpenDroidBridge/assets/app-icon.png",
   "OpenDroidBridge/assets/og-image.png",
   "OpenDroidBridge/assets/og-image-ja.png",
@@ -30,6 +31,8 @@ const requiredFiles = [
   "OpenDroidBridge/assets/site.css",
   "OpenDroidBridge/assets/site-i18n.js"
 ];
+
+const publicBaseUrl = "https://zero-f00.github.io/OpenDroidBridge-site";
 
 for (const page of pages) {
   const html = readFileSync(join(root, page), "utf8");
@@ -57,6 +60,39 @@ for (const required of [
 ]) {
   if (!legalI18n.includes(required)) {
     throw new Error(`missing required legal/support value: ${required}`);
+  }
+}
+
+const rootPage = readFileSync(join(root, "index.html"), "utf8");
+if (!rootPage.includes("./OpenDroidBridge/")) {
+  throw new Error("root redirect must be relative for GitHub project pages");
+}
+
+for (const file of [
+  "index.html",
+  "robots.txt",
+  "sitemap.xml",
+  "README.md",
+  "docs/legal-readiness-review.md",
+  "OpenDroidBridge/index.html",
+  "OpenDroidBridge/assets/site-i18n.js"
+]) {
+  const content = readFileSync(join(root, file), "utf8");
+  if (content.includes("https://example.com")) {
+    throw new Error(`${file} still contains https://example.com`);
+  }
+}
+
+for (const file of [
+  "robots.txt",
+  "sitemap.xml",
+  "README.md",
+  "OpenDroidBridge/index.html",
+  "OpenDroidBridge/assets/site-i18n.js"
+]) {
+  const content = readFileSync(join(root, file), "utf8");
+  if (!content.includes(publicBaseUrl)) {
+    throw new Error(`${file} is missing GitHub Pages base URL`);
   }
 }
 

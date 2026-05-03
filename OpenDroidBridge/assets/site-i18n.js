@@ -416,7 +416,7 @@ function applyLanguage(language) {
 
   const ogImage = document.querySelector('meta[property="og:image"]');
   if (ogImage) {
-    ogImage.setAttribute("content", `https://example.com/OpenDroidBridge/assets/og-image-${lang}.png`);
+    ogImage.setAttribute("content", `https://zero-f00.github.io/OpenDroidBridge-site/OpenDroidBridge/assets/og-image-${lang}.png`);
   }
 }
 

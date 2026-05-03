@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://example.com/OpenDroidBridge/</loc>
+    <loc>https://zero-f00.github.io/OpenDroidBridge-site/OpenDroidBridge/</loc>
   </url>
   <url>
-    <loc>https://example.com/OpenDroidBridge/support/</loc>
+    <loc>https://zero-f00.github.io/OpenDroidBridge-site/OpenDroidBridge/support/</loc>
   </url>
   <url>
-    <loc>https://example.com/OpenDroidBridge/privacy/</loc>
+    <loc>https://zero-f00.github.io/OpenDroidBridge-site/OpenDroidBridge/privacy/</loc>
   </url>
   <url>
-    <loc>https://example.com/OpenDroidBridge/terms/</loc>
+    <loc>https://zero-f00.github.io/OpenDroidBridge-site/OpenDroidBridge/terms/</loc>
   </url>
   <url>
-    <loc>https://example.com/OpenDroidBridge/legal/</loc>
+    <loc>https://zero-f00.github.io/OpenDroidBridge-site/OpenDroidBridge/legal/</loc>
   </url>
 </urlset>

@@ -2,6 +2,12 @@
 
 Static website for the OpenDroidBridge App Store listing.
 
+Production URL for GitHub Pages:
+
+```txt
+https://zero-f00.github.io/OpenDroidBridge-site/OpenDroidBridge/
+```
+
 ## Pages
 
 - `/OpenDroidBridge/` - marketing page
@@ -26,9 +32,22 @@ Then visit:
 http://localhost:3000/OpenDroidBridge/
 ```
 
-## Before deploying
+## Deployment
+
+This repository deploys to GitHub Pages with `.github/workflows/pages.yml`. Pushes to `main` upload the static site and serve it from:
+
+```txt
+https://zero-f00.github.io/OpenDroidBridge-site/
+```
+
+App Store URLs:
+
+- Marketing: `https://zero-f00.github.io/OpenDroidBridge-site/OpenDroidBridge/`
+- Support: `https://zero-f00.github.io/OpenDroidBridge-site/OpenDroidBridge/support/`
+- Privacy Policy: `https://zero-f00.github.io/OpenDroidBridge-site/OpenDroidBridge/privacy/`
+
+## Before release
 
 - Confirm the seller name, address, representative, phone disclosure process, and support intake match the App Store Connect seller information before release.
 - The current support link uses `info@tkgshoyu.jp`. Keep that mailbox able to handle privacy requests, refund-related support, and Specified Commercial Transactions Act disclosure requests.
-- Replace `https://example.com` metadata values with the final domain.
-- Upload this directory as a separate Vercel project.
+- If moving to a custom domain later, replace the GitHub Pages URLs in Open Graph metadata, `robots.txt`, and `sitemap.xml`.

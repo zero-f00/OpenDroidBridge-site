@@ -60,11 +60,11 @@ Sources:
 
 ## Release blockers that cannot be truthfully filled by Codex
 
-- Replace `https://example.com` in Open Graph metadata and `sitemap.xml` with the final Vercel or custom domain.
+- If moving away from GitHub Pages, replace `https://zero-f00.github.io/OpenDroidBridge-site` in Open Graph metadata, `robots.txt`, and `sitemap.xml` with the final domain.
 - Confirm the legal seller name exactly matches App Store Connect and the paid apps agreement account.
 - Keep `info@tkgshoyu.jp` able to receive privacy requests, refund-related support, and Specified Commercial Transactions Act phone-number disclosure requests before launch.
 - If the phone number is not displayed directly, confirm the "disclose without delay on request" process is operational before launch.
 
 ## Current conclusion
 
-The site now has the right page structure and non-placeholder content for App Store readiness: marketing, support, privacy policy, terms of use, and Japan SCTA notice. The remaining items are phone-number disclosure operations, App Store Connect seller-name confirmation, and deployment-domain replacements, not missing page implementation.
+The site now has the right page structure and non-placeholder content for App Store readiness: marketing, support, privacy policy, terms of use, and Japan SCTA notice. The remaining items are phone-number disclosure operations and App Store Connect seller-name confirmation, not missing page implementation.

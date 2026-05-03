@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://example.com/sitemap.xml
+Sitemap: https://zero-f00.github.io/OpenDroidBridge-site/sitemap.xml
