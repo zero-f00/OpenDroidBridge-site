@@ -74,7 +74,8 @@ const requiredLandingPhrases = [
   "favorites",
   "復元エリア",
   "Recovery area",
-  "Quest Display",
+  "表示ツール",
+  "Display Tools",
   "Codex CLI",
   "opendroidctl形式",
   "opendroidctl-style"
